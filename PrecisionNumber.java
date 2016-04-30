@@ -13,5 +13,21 @@ public class PrecisionNumber{
 		this.number1 = new BigDecimal(number1);
 		this.number2 = new BigDecimal(number2);
 	}
-
+	
+	//create a method to calculate the numbers
+	public void Calculate(int calculate, int scale){
+		if(calculate == 1){
+			System.out.println("The answer is : " + String.valueOf(number1.add(number2)));
+		}
+		else if(calculate == 2){
+			System.out.println("The answer is : " + String.valueOf(number1.subtract(number2)));
+		}
+		else if(calculate == 3){
+			System.out.println("The answer is : " + String.valueOf(number1.multiply(number2)));
+		}
+		else if(calculate == 4){
+			//if the number is indivisible then get the scale which the user want
+			System.out.println("The answer is : " + String.valueOf(number1.divide(number2, scale, BigDecimal.ROUND_HALF_UP)));
+		}
+	}
 }
